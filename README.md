@@ -26,7 +26,7 @@ Computes the average RGB value for every pixel in every image and saves the resu
 ```
 python average_image.py
 ```
-From a first glance, the picture has a moderate brightness, which is due to the fairly balanced day-time ratio. An interesting observation is the existence of several ghost objects (see the red rectangles). The longer the time in which an object has been present in the picture, the stronger it is defined.
+At a first glance, the picture has a moderate brightness, which is due to the fairly balanced day-night ratio. An interesting observation is the existence of several ghost objects (see the red rectangles). The longer the time in which an object has been present in the picture, the stronger it is defined.
 
 ![average_image_rect.png](https://github.com/paubric/Balcony-418/blob/master/average_image_rect.png)
 
@@ -51,6 +51,6 @@ Given an input image, shift it by ±6/12h.
 
 ## TODO
 - Link demo dataset
-- Split the dataset into a training set and a testing set(50% and 50%), alternatively
+- Split the dataset into a training set and a testing set (50% and 50%), alternatively distribute images
 - Implement Time Walk experiment
 - Optionally downscale automatically for NNs
