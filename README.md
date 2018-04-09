@@ -1,21 +1,21 @@
 # Balcony-418
 ## Introduction
-B418 consists of a machine learning experiment, centered around a DIY dataset. A 24-hour timelapse with images taken once a minute comprises the data collection. 
+B418 consists of a machine learning experiment, centered around a DIY dataset. A 24-hour timelapse with images taken once a minute comprises the data collection. On it, a number of experiments related to data analysis and machine learning will be performed. The _b418.py_ module contains the functionality needed to easily operate on the fresh dataset. The machine learning experiments will only make sense to use with similar images.
 
 ## Build your dataset
-Connect your camera which supports live USB feed to your computer. Find the identifier of your camera. Modify the _capture.py_ file accordingly. Run the script:
+To create your own dataset, connect your camera (which must support live USB feed) to your computer. Find the identifier of your camera. Modify the _capture.py_ file accordingly, by adding the identifier at line 4. Run the script:
 ```
 python capture.py
 ```
-You should see a new window and the live camera feed. In the console, you will be prompted when a frame is captured. Grab a coffee. 
+You should see a new window and the live camera feed. If you see a black window, try testing the camera in an external application first. In the console, you will be prompted with a message whenever a frame is captured. Sit back and relax.
 
-If you don't have the possibility of creating your own dataset, try this one (TODO).
+If you can't create your own dataset, try this one (TODO).
+![sample.png](https://github.com/paubric/Balcony-418/blob/master/sample.png)
 
 ## Experiments
 ### Light Intensity Analysis
 Computes the average RGB value of every pixel for every image and plots the resulted series, together with a smoothed version. Although not measuring the actual light intensity at every wavelength, there is a strong correlation between that and the RGB value average. A high plateau can be noticed at daytime and a lower one at nighttime. The sunrise and sunset can be observed easily through the high absolute value of the slope. Lines representing the ground-truth sunrise and sunset timestamps have been added in order to validate the observation.
-<div style="text-align:center"><img src ="https://github.com/paubric/Balcony-418/blob/master/Figure_brightness.png" /></div>
-
+![Figure_time_prediction.png](https://github.com/paubric/Balcony-418/blob/master/Figure_brightness.png)
 
 ### Average Image
 Computes the average RGB value for every pixel in every image and saves the resulted image. From a first glance, the picture has a moderate brightness, which is due to the fairly balanced day-time ratio. An interesting observation is the existence of several ghost objects (see the red rectangles). The longer the time in which an object has been present in the picture, the stronger it is defined.
@@ -27,7 +27,8 @@ Trains a Tensorflow model, through Keras, to predict the moment of the day at wh
 ![Figure_time_prediction.png](https://github.com/paubric/Balcony-418/blob/master/Figure_time_prediction.png)
 
 ### Artificial Synesthesia
-Given an input image and temperature data analogous to the image dataset, predict the air temperature. 
+Trains a Tensorflow model, through Keras, to predict the air temperature at the moment when an image has been captured. The model consists of several 2D convolutional layers (with 3D filters for color), followed by pooling, dropout and flatten layers. The final neuron will output a number between 0 and 1, which is later denormalized to a temperature value. The model closely follows the temperature evolution.
+![Figure_temperature_prediction.png](https://github.com/paubric/Balcony-418/blob/master/Figure_temperature_prediction.png)
 
 ### Time Walk
 Given an input image, shift it by ±6/12h.
