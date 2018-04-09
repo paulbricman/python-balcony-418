@@ -49,9 +49,13 @@ The model consists of several 2D convolutional layers (with 3D filters for color
 ### Time Walk
 Given an input image, shift it by ±6/12h.
 
+### Car Detection
+Plot number of cars versus time, observe hours with most parked cars.
+
 ## TODO
 - Link demo dataset
 - Split the dataset into a training set and a testing set (50% and 50%), alternatively distribute images
 - Implement Time Walk experiment
+- Implement Car Detection experiment
 - Optionally downscale automatically for NNs
 - Remove hardcoded temperature data
