@@ -9,7 +9,7 @@ python capture.py
 ```
 You should see a new window and the live camera feed. If you see a black window, try testing the camera in an external application first. In the console, you will be prompted with a message whenever a frame is captured. Sit back and relax. Once completed, you should downscale your dataset images into a smaller version for faster NN experiments.
 
-If you can't create your own dataset, try [this one](https://drive.google.com/open?id=1kytPz3cn3Hlq7UbGIchHIwTJZ5QxHQ7k). For the NN experiments, the images have been downscaled to a heart-breaking 160x120 resolution. 
+If you can't create your own dataset, try [this one](https://goo.gl/kXSpUA). For the NN experiments, the images have been downscaled to a heart-breaking 160x120 resolution. 
 ![sample.png](https://github.com/paubric/Balcony-418/blob/master/sample.png)
 
 ## Experiments
