@@ -4,7 +4,7 @@ import cv2 as cv
 import numpy as np
 import re
 
-# Sorts file in natural order
+# Sorts files in natural order
 def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
     return [int(text) if text.isdigit() else text.lower()
             for text in re.split(_nsre, s)]
