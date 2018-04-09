@@ -14,10 +14,12 @@ If you don't have the possibility of creating your own dataset, try this one (TO
 ## Experiments
 ### Light Intensity Analysis
 Computes the average RGB value of every pixel for every image and plots the resulted series, together with a smoothed version. Although not measuring the actual light intensity at every wavelength, there is a strong correlation between that and the RGB value average. A high plateau can be noticed at daytime and a lower one at nighttime. The sunrise and sunset can be observed easily through the high absolute value of the slope. Lines representing the ground-truth sunrise and sunset timestamps have been added in order to validate the observation.
-![Figure_brightness.png](https://github.com/paubric/Balcony-418/blob/master/Figure_brightness.png)
+<div style="text-align:center"><img src ="https://github.com/paubric/Balcony-418/blob/master/Figure_brightness.png" /></div>
+
 
 ### Average Image
 Computes the average RGB value for every pixel in every image and saves the resulted image. From a first glance, the picture has a moderate brightness, which is due to the fairly balanced day-time ratio. An interesting observation is the existence of several ghost objects (see the red rectangles). The longer the time in which an object has been present in the picture, the stronger it is defined.
+
 ![average_image_rect.png](https://github.com/paubric/Balcony-418/blob/master/average_image_rect.png)
 
 ### Predict timestamp
