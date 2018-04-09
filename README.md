@@ -30,7 +30,7 @@ At a first glance, the picture has a moderate brightness, which is due to the fa
 
 ![average_image_rect.png](https://github.com/paubric/Balcony-418/blob/master/average_image_rect.png)
 
-### Predict timestamp
+### Predict Timestamp
 Trains a Tensorflow model, through Keras, to predict the moment of the day at which an image has been captured.
 ```
 python predict_time.py
@@ -38,10 +38,10 @@ python predict_time.py
 The model consists of several 2D convolutional layers (with 3D filters for color), followed by pooling, dropout and flatten layers. The final neuron will output a number between 0 and 1, which is later scaled to the 0-24h interval. During daytime, the model performs very well by learning the changing patterns (probably being heavily influenced by the building shadows). The model has some difficulty in making precise predictions during nighttime because of the low number of features which discriminate the night images.  
 ![Figure_time_prediction.png](https://github.com/paubric/Balcony-418/blob/master/Figure_time_prediction.png)
 
-### Artificial Synesthesia
+### Predict Temperature
 Trains a Tensorflow model, through Keras, to predict the air temperature at the moment when an image has been captured.
 ```
-python predict_time.py
+python predict_temperature.py
 ```
 The model consists of several 2D convolutional layers (with 3D filters for color), followed by pooling, dropout and flatten layers. The final neuron will output a number between 0 and 1, which is later denormalized to a temperature value. The model closely follows the temperature evolution.
 ![Figure_temperature_prediction.png](https://github.com/paubric/Balcony-418/blob/master/Figure_temperature_prediction.png)
